@@ -2,11 +2,112 @@ html, body{
   font-family: "myriad-pro", sans-serif;
 }
 
-.project-box{
+header, footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 50px;
+  overflow: hidden;
+  font-size: 100px;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+header{
+  top: 0;
+  line-height: 100px;
+}
+
+footer{
+  bottom: 0;
+  line-height: 0;
+}
+
+.path{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  position: relative;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section:hover .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 0.5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+section{
+  border-bottom: 1px solid #F2F2F2;
+  padding: 20px 0px;
+}
+
+section h3{
+  width: 100%;
+  text-align: center;
+}
+
+a{
+  color: black;
+  display: block;
+}
+
+a:hover{
+  text-decoration: none;
+  color: black;
+  background: #FAFAFA;
+}
+
+section p{
+  font-size: 18px;
+}
+
+a{
+  padding: 40px 0px;
+  -moz-transition:all 0.2s ease;
+  -webkit-transition:all 0.2s ease;
+  -ms-transition:all 0.2s ease;
+  -o-transition:all 0.2s ease;
+  transition:all 0.2s ease;
+}
+
+a aside{
+  position: relative;
   width: 200px;
   height: 200px;
+  margin: -200px auto 0 auto;
+}
+/*  font-size: 80px;
+  padding: 50px 0px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 800;
+  overflow: hidden;
+  background: black;
+}*/
+
+a aside div{
+  position: absolute;
+  top: 33px;
+  right: -90px;
+  width: 200px;
+  height: 30px;
   background: white;
-  border: 2px solid black;
-  color: black;
-  font-size: 5em;
+  color: #A4A4A4;
+  font-weight: 300;
+  -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    font-size: 20px;
+    padding: 3px 50px 7px 0px;
 }
