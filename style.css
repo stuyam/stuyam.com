@@ -1,3 +1,7 @@
+html, body{
+  font-family: "myriad-pro", sans-serif;
+}
+
 .project-box{
   width: 200px;
   height: 200px;
