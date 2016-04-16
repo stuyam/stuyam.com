@@ -84,10 +84,13 @@ header{
 }
 
 a:hover{
-  display: block;
   text-decoration: none;
-  background: #CE4848;
+  background: #B64141;
   color: white !important;
+}
+
+h2{
+  color: #B64141;
 }
 
 a:hover aside{
@@ -99,6 +102,7 @@ section p{
 }
 
 a{
+  display: block;
   padding: 40px 0px;
   -moz-transition:all 0.2s ease;
   -webkit-transition:all 0.2s ease;
@@ -109,7 +113,7 @@ a{
 }
 
 a aside{
-  background: #CE4848;
+  background: #B64141;
   color: #FA5858;
   position: relative;
   width: 200px;
@@ -135,8 +139,8 @@ a aside div{
   width: 200px;
   height: 30px;
   background: white;
-  color: #DA4F4F;
-  font-weight: 300;
+  color: #B64141;
+  font-weight: 500;
   -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
