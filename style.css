@@ -24,7 +24,7 @@ header{
   display: table;
   position: relative;
   margin: auto;
-  width: 800px;
+  width: 750px;
   animation: shrink-svg 0.5s ease-in-out 4s forwards;
 }
 
@@ -70,7 +70,7 @@ header{
 
 @keyframes shrink-svg {
   to {
-    width: 280px;
+    width: 250px;
   }
 }
 
