@@ -24,7 +24,7 @@ header{
   display: table;
   position: relative;
   margin: auto;
-  width: 750px;
+  width: 760px;
   animation: shrink-svg 0.5s ease-in-out 4s forwards;
 }
 
