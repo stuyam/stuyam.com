@@ -2,10 +2,10 @@ html, body{
   font-family: "myriad-pro", sans-serif;
   width: 100%;
   height: 100%;
+  background: #FA5858;
 }
 
 header{
-  background: #FA5858;
   position: relative;
   width: 100%;
   height: 100%;
@@ -31,6 +31,7 @@ header{
 .path{
   letter-spacing: 2px;
   fill: #FA5858;
+  stroke: #ffffff;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   font-size: 100px;
@@ -65,6 +66,8 @@ header{
 @keyframes shrink-text {
   to {
     font-size: 30px;
+/*    fill: #DA4F4F;
+    stroke: #DA4F4F;*/
   }
 }
 
@@ -80,8 +83,64 @@ header{
   }
 }
 
+a:hover{
+  display: block;
+  text-decoration: none;
+  background: #CE4848;
+  color: white !important;
+}
 
-section{
+a:hover aside{
+  color: white !important;
+}
 
+section p{
+  font-size: 18px;
+}
+
+a{
+  padding: 40px 0px;
+  -moz-transition:all 0.2s ease;
+  -webkit-transition:all 0.2s ease;
+  -ms-transition:all 0.2s ease;
+  -o-transition:all 0.2s ease;
+  transition:all 0.2s ease;
+  color: #DA4F4F;
+}
+
+a aside{
+  background: #CE4848;
+  color: #FA5858;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  font-size: 80px;
+  padding: 50px 0px;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 800;
+  overflow: hidden;
+  -moz-transition:all 0.2s ease;
+  -webkit-transition:all 0.2s ease;
+  -ms-transition:all 0.2s ease;
+  -o-transition:all 0.2s ease;
+  transition:all 0.2s ease;
+}
+
+a aside div{
+  position: absolute;
+  top: 33px;
+  right: -90px;
+  width: 200px;
+  height: 30px;
+  background: white;
+  color: #DA4F4F;
+  font-weight: 300;
+  -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    font-size: 20px;
+    padding: 3px 50px 7px 0px;
 }
 
