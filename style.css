@@ -1,0 +1,8 @@
+.project-box{
+  width: 200px;
+  height: 200px;
+  background: white;
+  border: 2px solid black;
+  color: black;
+  font-size: 5em;
+}
