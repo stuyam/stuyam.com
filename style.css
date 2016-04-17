@@ -85,7 +85,7 @@ header{
 
 a:hover{
   text-decoration: none;
-  background: #B64141;
+  background: #E44F4F;
   color: white !important;
 }
 
@@ -113,7 +113,8 @@ a{
 }
 
 a aside{
-  background: #B64141;
+  border-radius: 50%;
+  background: #E44F4F;
   color: white;
   position: relative;
   width: 200px;
