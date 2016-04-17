@@ -1,18 +1,23 @@
-html, body{
-  font-family: "myriad-pro", sans-serif;
-  width: 100%;
+html {
   height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5e3a+0,ff2a68+100 */
   background: #ff5e3a; /* Old browsers */
   background: -moz-linear-gradient(top,  #ff5e3a 0%, #ff2a68 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  #ff5e3a 0%,#ff2a68 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #ff5e3a 0%,#ff2a68 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e3a', endColorstr='#ff2a68',GradientType=0 ); /* IE6-9 */
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
+
+  font-family: "myriad-pro", sans-serif;
 }
 
 header{
