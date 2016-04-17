@@ -2,15 +2,24 @@ html, body{
   font-family: "myriad-pro", sans-serif;
   width: 100%;
   height: 100%;
-  background: #FA5858;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5e3a+0,ff2a68+100 */
+  background: #ff5e3a; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff5e3a 0%, #ff2a68 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ff5e3a 0%,#ff2a68 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ff5e3a 0%,#ff2a68 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e3a', endColorstr='#ff2a68',GradientType=0 ); /* IE6-9 */
+
   color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
 }
 
 header{
   position: relative;
   width: 100%;
   height: 100%;
-  animation: shrink 0.5s ease-in-out 5s forwards;
+  animation: shrink 0.5s ease-in-out 4s forwards;
 }
 
 .svg-wrapper{
@@ -18,18 +27,16 @@ header{
   top: 50%;
   margin-top: -50px;
   width: 100%;
-  animation: shrink-wrapper 0.5s ease-in 5s forwards;
+  animation: shrink-wrapper 0.5s ease-in 4s forwards;
 }
 
-.svg-wrapper span{
+.social-links{
   display: block;
   text-align: center;
   width: 100%;
-  opacity: 0;
-  animation: span-show 0.5s ease-in-out 4s forwards;
 }
 
-.svg-wrapper span a{
+.social-links a{
   color: white;
 }
 
@@ -38,29 +45,23 @@ header{
   position: relative;
   margin: auto;
   width: 760px;
-  animation: shrink-svg 0.5s ease-in-out 5s forwards;
+  animation: shrink-svg 0.5s ease-in-out 4s forwards;
 }
 
 .path{
   letter-spacing: 2px;
-  fill: #FA5858;
+  fill: #FF4153;
   stroke: #ffffff;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   font-size: 100px;
   font-weight: 500;
-  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
+  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .path{
-    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
-  }
-}
-
-@keyframes span-show {
-  to {
-    opacity: 1;
+    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
   }
 }
 
@@ -91,7 +92,7 @@ header{
 @keyframes shrink-svg {
   to {
     width: 270px;
-    height: 120px;
+    height: 110px;
   }
 }
 
@@ -103,7 +104,7 @@ header{
 
 a.blocks:hover{
   text-decoration: none;
-  background: #E44F4F;
+  background: rgba(0,0,0,0.025);
   color: white !important;
 }
 
@@ -117,6 +118,7 @@ a.blocks:hover aside{
 
 section p{
   font-size: 18px;
+  font-weight: 300;
 }
 
 a.blocks{
@@ -132,7 +134,7 @@ a.blocks{
 
 a.blocks aside{
   border-radius: 50%;
-  background: #E44F4F;
+  background: rgba(0,0,0,0.05);
   color: white;
   position: relative;
   width: 200px;
