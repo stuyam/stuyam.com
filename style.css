@@ -48,7 +48,7 @@ header{
 }
 
 .svg-wrapper svg{
-  display: table;
+  display: block;
   position: relative;
   margin: auto;
   width: 760px;
@@ -65,12 +65,6 @@ header{
   font-size: 100px;
   font-weight: 500;
   animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .path{
-    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
-  }
 }
 
 @keyframes dash {
@@ -114,6 +108,18 @@ header{
 @keyframes shrink-wrapper {
   to {
     top: 0%;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .path{
+    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
+  }
+  @keyframes shrink-svg {
+    to {
+      width: 270px;
+      height: 100px;
+    }
   }
 }
 
