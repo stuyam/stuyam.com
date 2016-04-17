@@ -117,7 +117,7 @@ header{
   }
   @keyframes shrink-svg {
     to {
-      width: 240px;
+      width: 250px;
       height: 110px;
     }
   }
