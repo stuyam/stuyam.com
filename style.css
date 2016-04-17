@@ -3,13 +3,14 @@ html, body{
   width: 100%;
   height: 100%;
   background: #FA5858;
+  color: white;
 }
 
 header{
   position: relative;
   width: 100%;
   height: 100%;
-  animation: shrink 0.5s ease-in-out 4s forwards;
+  animation: shrink 0.5s ease-in-out 5s forwards;
 }
 
 .svg-wrapper{
@@ -17,7 +18,19 @@ header{
   top: 50%;
   margin-top: -50px;
   width: 100%;
-  animation: shrink-wrapper 0.5s ease-in 4s forwards;
+  animation: shrink-wrapper 0.5s ease-in 5s forwards;
+}
+
+.svg-wrapper span{
+  display: block;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  animation: span-show 0.5s ease-in-out 4s forwards;
+}
+
+.svg-wrapper span a{
+  color: white;
 }
 
 .svg-wrapper svg{
@@ -25,7 +38,7 @@ header{
   position: relative;
   margin: auto;
   width: 760px;
-  animation: shrink-svg 0.5s ease-in-out 4s forwards;
+  animation: shrink-svg 0.5s ease-in-out 5s forwards;
 }
 
 .path{
@@ -36,12 +49,18 @@ header{
   stroke-dashoffset: 1000;
   font-size: 100px;
   font-weight: 500;
-  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
+  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .path{
-    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
+    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
+  }
+}
+
+@keyframes span-show {
+  to {
+    opacity: 1;
   }
 }
 
@@ -66,14 +85,13 @@ header{
 @keyframes shrink-text {
   to {
     font-size: 30px;
-/*    fill: #DA4F4F;
-    stroke: #DA4F4F;*/
   }
 }
 
 @keyframes shrink-svg {
   to {
     width: 270px;
+    height: 120px;
   }
 }
 
@@ -83,7 +101,7 @@ header{
   }
 }
 
-a:hover{
+a.blocks:hover{
   text-decoration: none;
   background: #E44F4F;
   color: white !important;
@@ -93,7 +111,7 @@ h2{
   color: white;
 }
 
-a:hover aside{
+a.blocks:hover aside{
   color: white !important;
 }
 
@@ -101,9 +119,9 @@ section p{
   font-size: 18px;
 }
 
-a{
+a.blocks{
   display: block;
-  padding: 40px 0px;
+  padding: 40px 20px;
   -moz-transition:all 0.2s ease;
   -webkit-transition:all 0.2s ease;
   -ms-transition:all 0.2s ease;
@@ -112,7 +130,7 @@ a{
   color: white;
 }
 
-a aside{
+a.blocks aside{
   border-radius: 50%;
   background: #E44F4F;
   color: white;
@@ -131,21 +149,5 @@ a aside{
   -ms-transition:all 0.2s ease;
   -o-transition:all 0.2s ease;
   transition:all 0.2s ease;
-}
-
-a aside div{
-  position: absolute;
-  top: 33px;
-  right: -90px;
-  width: 200px;
-  height: 30px;
-  background: white;
-  color: white;
-  font-weight: 500;
-  -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    transform: rotate(45deg);
-    font-size: 20px;
-    padding: 3px 50px 7px 0px;
 }
 
