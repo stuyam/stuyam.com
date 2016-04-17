@@ -24,7 +24,7 @@ header{
   position: relative;
   width: 100%;
   height: 100%;
-  animation: shrink 0.5s ease-in-out 4s forwards;
+  animation: shrink 0.5s ease-in-out 5s forwards;
 }
 
 .svg-wrapper{
@@ -32,13 +32,15 @@ header{
   top: 50%;
   margin-top: -50px;
   width: 100%;
-  animation: shrink-wrapper 0.5s ease-in 4s forwards;
+  animation: shrink-wrapper 0.5s ease-in 5s forwards;
 }
 
 .social-links{
   display: block;
   text-align: center;
   width: 100%;
+  opacity: 0;
+  animation: social-show 0.5s ease-in 3.8s forwards;
 }
 
 .social-links a{
@@ -50,7 +52,8 @@ header{
   position: relative;
   margin: auto;
   width: 760px;
-  animation: shrink-svg 0.5s ease-in-out 4s forwards;
+  height: 120px;
+  animation: shrink-svg 0.5s ease-in-out 5s forwards;
 }
 
 .path{
@@ -61,12 +64,12 @@ header{
   stroke-dashoffset: 1000;
   font-size: 100px;
   font-weight: 500;
-  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
+  animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .path{
-    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 4s forwards;
+    animation: dash 4s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
   }
 }
 
@@ -81,6 +84,13 @@ header{
     fill: #ffffff;
   }
 }
+
+@keyframes social-show {
+  to {
+    opacity: 1;
+  }
+}
+
 
 @keyframes shrink {
   to {
