@@ -107,6 +107,7 @@ header{
 @keyframes shrink-wrapper {
   to {
     top: 0%;
+    margin-top: -50px;
   }
 }
 
