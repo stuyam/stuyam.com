@@ -85,7 +85,6 @@ header{
   }
 }
 
-
 @keyframes shrink {
   to {
     height: 120px;
@@ -117,9 +116,15 @@ header{
   }
   @keyframes shrink-svg {
     to {
-      width: 250px;
+      width: 260px;
       height: 110px;
     }
+  }
+}
+
+@media(max-width:767px){
+  .path{
+    font-size: 50px;
   }
 }
 
