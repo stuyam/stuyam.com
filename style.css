@@ -124,10 +124,13 @@ header{
 
 @media(max-width:767px){
   .svg-wrapper svg{
-    width: 300px;
+    width: 320px;
   }
   .path{
     font-size: 40px;
+  }
+  .svg-wrapper{
+    margin-top: -100px;
   }
 }
 
