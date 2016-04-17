@@ -128,6 +128,7 @@ header{
     width: 320px;
   }
   .path{
+    fill: #ff5e3a;
     font-size: 40px;
     animation: dash 8s linear forwards, fill 0.5s linear 3.2s forwards, shrink-text 0.5s ease-in-out 5s forwards;
   }
