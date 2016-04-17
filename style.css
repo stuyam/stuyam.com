@@ -94,7 +94,7 @@ header{
 
 @keyframes shrink {
   to {
-    height: 60px;
+    height: 120px;
   }
 }
 
