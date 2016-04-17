@@ -90,7 +90,7 @@ a:hover{
 }
 
 h2{
-  color: #B64141;
+  color: white;
 }
 
 a:hover aside{
@@ -109,18 +109,18 @@ a{
   -ms-transition:all 0.2s ease;
   -o-transition:all 0.2s ease;
   transition:all 0.2s ease;
-  color: #DA4F4F;
+  color: white;
 }
 
 a aside{
   background: #B64141;
-  color: #FA5858;
+  color: white;
   position: relative;
   width: 200px;
   height: 200px;
   margin: auto;
   font-size: 80px;
-  padding: 50px 0px;
+  padding: 43px 0px;
   text-align: center;
   box-sizing: border-box;
   font-weight: 800;
@@ -139,7 +139,7 @@ a aside div{
   width: 200px;
   height: 30px;
   background: white;
-  color: #B64141;
+  color: white;
   font-weight: 500;
   -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
