@@ -27,6 +27,18 @@ header{
   animation: shrink 0.5s ease-in-out 5s forwards;
 }
 
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
 .svg-wrapper{
   position: absolute;
   top: 50%;
