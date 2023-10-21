@@ -1,75 +1,28 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Stuart Yamartino</title>
-        <meta name="description" content="Stuart Yamartino">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.png?v1">
-        <script src="https://use.typekit.net/uqo0cpv.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-       <header>
-            <div class="svg-wrapper">
-                <svg>
-                    <text x="0" class="path" y="100" stroke-width="1" width="100%">Stuart Yamartino</text>
-                </svg>
-                <span class="social-links">
-                    <h4><a href="https://dockwa.com/about-us">Software Engineer @ Dockwa</a></h4>
-                    <a href="https://github.com/stuyam"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/stuyam"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/users/1231563/stuyam?tab=profile"><i class="fa fa-stack-overflow" aria-hidden="true"></i> StackOverflow</a>
-                </span>
-            </div>
-       </header>
-
-       <div class="container">
-            <section>
-                <h2>I Built...</h2>
-                <div class="row">
-                    <a class="col-md-3 col-sm-6 blocks" href="http://pressurejs.com">
-                        <aside>PR</aside>
-                        <h3>Pressure.js</h3>
-                        <p>
-                            Pressure is a JavaScript library that makes dealing with Apple's Force Touch and 3D Touch simple.
-                        </p>
-                    </a>
-                    <a class="col-md-3 col-sm-6 blocks" href="http://cssdevices.io">
-                        <aside>CD</aside>
-                        <h3>CSSDevices</h3>
-                        <p>
-                            A collection of Apple devices made in 100% CSS. Use them to show off your app or website. Perfect for that "flat" look.
-                        </p>
-                    </a>
-                    <a class="col-md-3 col-sm-6 blocks" href="https://reporank.com">
-                        <aside>RR</aside>
-                        <h3>Repo Rank</h3>
-                        <p>
-                            A badge for GitHub readme docs that display the repositories rank globally.
-                        </p>
-                    </a>
-                    <a class="col-md-3 col-sm-6 blocks" href="https://github.com/yamartino/poet">
-                        <aside>PO</aside>
-                        <h3>Poet</h3>
-                        <p>
-                            Poet is a CSS typography library for eloquent websites. It makes typography easy on the web.
-                        </p>
-                    </a>
-                </div>
-            </section>
-       </div>
-
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-76513835-1','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    </body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png?v1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="absolute top-0 left-0 right-0 z-10">
+    <div class="absolute z-50 w-36 h-20 rounded-3xl bg-red-300 rotate-12"></div>
+    <div class="absolute z-40 right-0 top-0 w-40 h-40 rounded-full bg-yellow-300"></div>
+    <div class="absolute z-30 w-full h-12 rounded-3xl bg-blue-300 rotate-45"></div>
+    <div class="absolute z-20 right-0 top-0 w-full h-20 rounded-3xl bg-green-300 -rotate-12"></div>
+  </div>
+  <div class="relative z-20 max-w-7xl mx-auto mt-20 px-12 flex flex-col gap-8 mb-10">
+    <div class="relative">
+      <div class="absolute w-32 h-[100px] bg-fuchsia-300 rounded-3xl -mt-[18px] ml-8 rotate-90"></div>
+      <img class="relative w-32 rounded-full border-8 border-purple-300 hover:animate-spin" src="favicon.png">
+    </div>
+    <h1 class="text-4xl font-bold leading-normal">Hi 👋 I'm <span class="text-red-500">Stuart</span></h1>
+    <div class="text-4xl font-bold leading-normal"><span class="mr-4">💼</span> I work at <a class="text-yellow-500 underline" href="https://dockwa.com/about-us">Dockwa.com</a></div>
+    <div class="text-4xl font-bold leading-normal"><span class="mr-4">💻</span> I'm building <a class="text-blue-500 underline" href="https://bootstrapemail.com">BootstrapEmail.com</a></div>
+    <div class="text-4xl font-bold leading-normal"><span class="mr-4">📭</span> I've open sourced <a class="text-violet-500 underline" href="https://bootstrapemail.com">BootstrapEmail</a>, <a class="text-violet-500 underline" href="https://pressurejs.com">PressureJS</a>, <a class="text-violet-500 underline" href="https://github.com/dockwa/simple-react-validator">Simple React Validator</a>, <a class="text-violet-500 underline" href="https://github.com/dockwa/openpixel">Open Pixel</a>, <a class="text-violet-500 underline" href="https://cssdevices.com">CSSDevices</a></div>
+    <div class="text-4xl font-bold leading-normal"><span class="mr-4">🔍</span> Find me on <a class="text-gray-500 underline" href="https://github.com/stuyam">Github</a> or <a class="text-gray-500 underline" href="https://stackoverflow.com/users/1231563/stuyam?tab=profile">StackOverflow</a> or email me at <span class="text-gray-500">stu@stuyam.com</span></div>
+  </div>
+</body>
 </html>
