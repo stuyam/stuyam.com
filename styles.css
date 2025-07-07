@@ -1,0 +1,115 @@
+@keyframes highlight {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -100%;
+  }
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(12deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(5px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-3px);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-12deg);
+  }
+}
+
+@keyframes float5 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-12px) translateX(8px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(0px);
+  }
+  75% {
+    transform: translateY(-8px) translateX(-6px);
+  }
+}
+
+.float-animation-1 {
+  animation: float1 6s ease-in-out infinite;
+}
+
+.float-animation-2 {
+  animation: float2 8s ease-in-out infinite;
+}
+
+.float-animation-3 {
+  animation: float3 7s ease-in-out infinite;
+}
+
+.float-animation-4 {
+  animation: float4 9s ease-in-out infinite;
+}
+
+.float-animation-5 {
+  animation: float5 10s ease-in-out infinite;
+}
+
+a:hover {
+  animation-name: highlight;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  background-size: 200%;
+  margin-left: -6px;
+  margin-right: -6px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+a.text-yellow-500:hover {
+  background-image: linear-gradient(to right, transparent 50%, #fef08a 50%);
+}
+
+a.text-emerald-500:hover {
+  background-image: linear-gradient(to right, transparent 50%, #6ee7b7 50%);
+}
+
+a.text-violet-500:hover {
+  background-image: linear-gradient(to right, transparent 50%, #c4b5fd 50%);
+}
+
+a.text-gray-400:hover {
+  background-image: linear-gradient(to right, transparent 50%, #e5e7eb 50%);
+}
+
+a {
+  text-shadow: 1px 1px 0 #111827;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
