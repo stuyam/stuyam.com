@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@keyframes highlight {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -100%;
+  }
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(12deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(5px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-3px);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-12deg);
+  }
+}
+
+@keyframes float5 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-12px) translateX(8px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(0px);
+  }
+  75% {
+    transform: translateY(-8px) translateX(-6px);
+  }
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.float-animation-1 {
+  animation: float1 6s ease-in-out infinite;
+}
+
+.float-animation-2 {
+  animation: float2 8s ease-in-out infinite;
+}
+
+.float-animation-3 {
+  animation: float3 7s ease-in-out infinite;
+}
+
+.float-animation-4 {
+  animation: float4 9s ease-in-out infinite;
+}
+
+.float-animation-5 {
+  animation: float5 10s ease-in-out infinite;
+}
+
+.hue-rotation {
+  transition: all 0.3s ease;
+}
+
+.hue-rotation:hover {
+  animation: hue-rotate 1s linear infinite;
+}
+
+a {
+  text-shadow: 1px 1px 0 #111827;
+  text-decoration: underline !important;
+  text-underline-offset: 0.3rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  text-shadow: 2px 2px 0 #111827, 0 0 10px currentColor;
+  filter: brightness(1.2);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transition: width 0.2s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}

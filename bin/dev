@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Run the Jekyll server in development mode
+bundle exec jekyll serve --livereload

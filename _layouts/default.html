@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="web development, mobile apps, Ruby on Rails, Hotwire, Tailwind CSS, API development">
+
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+  </head>
+  <body class="bg-gradient-to-br from-slate-950 to-cyan-950 text-white h-100 bg-no-repeat bg-fixed">
+    {{ content }}
+  </body>
+</html>
