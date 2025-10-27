@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @keyframes highlight {
   from {
@@ -100,7 +101,7 @@
   animation: hue-rotate 1s linear infinite;
 }
 
-a {
+a:not(.btn) {
   text-shadow: 1px 1px 0 #111827;
   text-decoration: underline !important;
   text-underline-offset: 0.3rem;
@@ -108,13 +109,13 @@ a {
   position: relative;
 }
 
-a:hover {
+a:not(.btn):hover {
   transform: translateY(-2px);
   text-shadow: 2px 2px 0 #111827, 0 0 10px currentColor;
   filter: brightness(1.2);
 }
 
-a::after {
+a:not(.btn)::after {
   content: '';
   position: absolute;
   width: 0;
@@ -125,6 +126,10 @@ a::after {
   transition: width 0.2s ease;
 }
 
-a:hover::after {
+a:not(.btn):hover::after {
   width: 100%;
+}
+
+.btn {
+  @apply inline-block px-4 py-2 bg-gray-800 hover:bg-cyan-500 text-gray-300 hover:text-white rounded-lg transition-all duration-200 relative;
 }

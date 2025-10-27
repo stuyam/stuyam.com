@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="description" content="{{ page.excerpt | default: site.description }}"> -->
+    <meta name="keywords" content="web development, mobile apps, Ruby on Rails, Hotwire, Tailwind CSS, API development">
+
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ page.title }}">
+    <!-- <meta property="og:description" content="{{ page.excerpt | default: site.description }}"> -->
+
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-ruby.min.js"></script>
+  </head>
+  <body class="bg-gradient-to-br from-slate-950 to-cyan-950 text-white h-100 bg-no-repeat bg-fixed">
+    <div class="absolute top-0 left-0 right-0 z-10">
+      <div class="absolute z-50 w-36 h-20 rounded-3xl bg-gradient-to-b from-rose-300 to-rose-700 float-animation-1"></div>
+      <div class="absolute z-40 right-0 top-0 w-40 h-40 rounded-full bg-gradient-to-b from-yellow-300 to-yellow-700 float-animation-2"></div>
+      <div class="absolute z-30 w-full h-12 rounded-3xl bg-gradient-to-b from-blue-300 to-blue-700 float-animation-3"></div>
+      <div class="absolute z-20 right-0 top-0 w-full h-20 rounded-3xl bg-gradient-to-b from-emerald-300 to-emerald-700 float-animation-4 hidden md:block"></div>
+    </div>
+    <div class="relative z-20 max-w-4xl mx-auto mt-20 md:px-12 px-6 flex flex-col mb-24">
+      <div class="mb-8">
+        <a class="btn" href="/blog.html">← Blog</a>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-medium !leading-normal">
+        {{ page.title }}
+      </h1>
+
+      <div class="text-gray-400 text-lg mb-2">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.categories.size > 0 %}
+          <span class="ml-4">
+            {% for category in page.categories %}
+              <span class="text-cyan-500">#{{ category }}</span>
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+      <div class="text-gray-400 text-base mb-6">
+        by <a href="/" class="text-sky-500 hover:text-sky-400 transition-colors">Stuart Yamartino</a>
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none text-gray-100 mb-20">
+        <div class="space-y-4">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
