@@ -72,5 +72,5 @@ Here are some examples of places I have used it.
     <div class="tabbar native:pb-[max(env(safe-area-inset-bottom),0.5rem)]">...</div>
     ```
 
-Note: I actually discovered this [post by Joe Masilotti](https://masilotti.com/hotwire-native/hide-content-tailwind-css/) _after_ I wrote this. We came up with a very similar approach. The only slight difference I chose was to put the `data-hotwire-native` property on the `<html>` element so you can add classes to the `<body>` and they will still work because they are still a child of `<html>`. As well as some other naming choices. Of course, Joe is a great resource for all things Hotwire Native. Check out his work if you haven't already.
+Note: I actually discovered this [post by Joe Masilotti](https://masilotti.com/hotwire-native/hide-content-tailwind-css/) _after_ I wrote this. We came up with a very similar approach. The only slight difference I chose was to put the `data-hotwire-native` property on the `<html>` element so you can add classes to the `<body>` and they will still work because they are still a child of `<html>`. As well as some other naming choices differences but all and all same idea. Of course, Joe is a great resource for all things Hotwire Native. Check out his work if you haven't already.
 
