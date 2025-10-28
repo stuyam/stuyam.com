@@ -14,7 +14,7 @@
 <meta property="og:description" content="{{ site.description }}">
 
 <title>{{ page.title }}</title>
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+<link rel="stylesheet" href="/assets/css/style.css?v={{ site.time | date:'%s' }}">
 
 <!-- Posthog Analytics -->
 <script>
