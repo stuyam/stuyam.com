@@ -6,9 +6,9 @@ categories: ruby-on-rails hotwire-native tailwindcss
 
 Hotwire Native gives us a lot of tools for building robust iOS and Android apps. It allows us to use our existing Ruby on Rails web application and transform it 🪄 into a native app. However, web apps usually need some tweaking before rendering in a native wrapper like Hotwire Native.
 
-In rails we get the `hotwire_native_app?` view helper via the `turbo-rails` gem that we can use to conditionally render parts of the HTML. This can be helpful when you want to show or hide things like a navbar, footer, etc.
+In Rails we get the `hotwire_native_app?` view helper via the `turbo-rails` gem that we can use to conditionally render parts of the HTML. This can be helpful when you want to show or hide things like a navbar, footer, etc.
 
-This works well, but there is usually more to it than just showing or hiding a part of the HTML. Sometimes you want to adjust the size of text, padding on the top or bottom, or borders or shadows that only show on Native.
+This works well, but there is usually more to it than just showing or hiding a part of the HTML. Sometimes you want to adjust the size of text, add padding to the top or bottom, or add borders or shadows that only show on Native.
 
 Enter Tailwind Variants. Tailwind variants allow us to apply any Tailwind class to just native apps, giving us full control over the styling of our native apps. The first step is to set up our `application.html.erb` layout to include a `data-hotwire-native` property we can use for Tailwind variants.
 
@@ -44,16 +44,17 @@ A quick overview of what each variant does:
 - `pwa:` targets Progressive Web Apps only.
 - `native:` targets hotwire native only.
 - `applike:` targets PWAs or Hotwire Native if you want them to function the same.
+
 Feel free to only include the variants you need in your app.
 
-Now is the fun part where we can arbitrarily combine variants to customize our app. Here is an example where we customize the background color of a button on hover **only** on native:
+Now comes the fun part where we can arbitrarily combine variants to customize our app. Here is an example where we customize the background color of a button on hover **only** on native:
 
 ```markup
 <button class="bg-gray-100 native:hover:bg-red-500">Hover me!</button>
 ```
 
 Here are some examples of places I have used it.
-1. Show or hide a navbar. Note: you can also do this just using the `hotwire_native_app?` helper but it can be easier in the code flow to use classes. Just be careful to not load more than you need into the view:
+1. Show or hide a navbar. Note: you can also do this just using the `hotwire_native_app?` helper but it can be easier in the code flow to use classes. Just be careful not to load more than you need into the view:
     ```markup
     <nav class="native:hidden">...</nav>
     ```
