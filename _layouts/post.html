@@ -1,23 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="description" content="{{ page.excerpt | default: site.description }}"> -->
-    <meta name="keywords" content="web development, mobile apps, Ruby on Rails, Hotwire, Tailwind CSS, API development">
+    {% include head.html %}
 
-    <!-- Mobile Web App Capable -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ page.title }}">
-    <!-- <meta property="og:description" content="{{ page.excerpt | default: site.description }}"> -->
-
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+    <!-- Prism Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-markup.min.js"></script>
@@ -56,10 +42,25 @@
         by <a href="/" class="text-sky-500 hover:text-sky-400 transition-colors">Stuart Yamartino</a>
       </div>
 
-      <div class="prose prose-invert prose-lg max-w-none text-gray-100 mb-20">
-        <div class="space-y-4">
-          {{ content }}
-        </div>
+      <div class="prose prose-invert prose-lg max-w-none text-gray-100 mb-4 prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
+        {{ content }}
+      </div>
+      <div class="mb-10">
+        <script src="https://giscus.app/client.js"
+          data-repo="stuyam/stuyam.com"
+          data-repo-id="MDEwOlJlcG9zaXRvcnk1NjM5MTgxNA=="
+          data-category="Announcements"
+          data-category-id="DIC_kwDOA1x4hs4CxJZz"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="transparent_dark"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
       </div>
     </div>
   </body>
