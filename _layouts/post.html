@@ -1,23 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="description" content="{{ page.excerpt | default: site.description }}"> -->
-    <meta name="keywords" content="web development, mobile apps, Ruby on Rails, Hotwire, Tailwind CSS, API development">
+    {% include head.html %}
 
-    <!-- Mobile Web App Capable -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ page.title }}">
-    <!-- <meta property="og:description" content="{{ page.excerpt | default: site.description }}"> -->
-
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+    <!-- Prism Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-markup.min.js"></script>
