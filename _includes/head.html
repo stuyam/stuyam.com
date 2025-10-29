@@ -11,7 +11,16 @@
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ page.title }}">
-<meta property="og:description" content="{{ site.description }}">
+{% if page.excerpt %}
+  <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines }}">
+{% elsif page.description %}
+  <meta property="og:description" content="{{ page.description | strip_html | strip_newlines }}">
+{% else %}
+  <meta property="og:description" content="{{ site.description }}">
+{% endif %}
+{% if page.og_image %}
+  <meta property="og:image" content="{{ site.url }}/assets/images/blogs/{{ page.og_image }}">
+{% endif %}
 
 <title>{{ page.title }}</title>
 <link rel="stylesheet" href="/assets/css/style.css?v={{ site.time | date:'%s' }}">

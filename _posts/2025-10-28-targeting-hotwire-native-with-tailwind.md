@@ -2,6 +2,7 @@
 layout: post
 title:  "Targeting Hotwire Native with Tailwind"
 categories: ruby-on-rails hotwire-native tailwindcss
+og_image: "target-hotwire-native.png"
 ---
 
 Hotwire Native gives us a lot of tools for building robust iOS and Android apps. It allows us to use our existing Ruby on Rails web application and transform it 🪄 into a native app. However, web apps usually need some tweaking before rendering in a native wrapper like Hotwire Native.
