@@ -133,3 +133,7 @@ a:not(.btn):hover::after {
 .btn {
   @apply inline-block px-4 py-2 bg-gray-800 hover:bg-cyan-500 text-gray-300 hover:text-white rounded-lg transition-all duration-200 relative;
 }
+
+code[class*=language-], pre[class*=language-] {
+  font-size: 1rem;
+}
