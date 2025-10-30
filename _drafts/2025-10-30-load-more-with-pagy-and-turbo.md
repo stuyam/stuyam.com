@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  'How I "Load More" with Pagy and Turbo'
+title:  '"Load More" with Pagy and Turbo'
 categories: ruby-on-rails turbo pagy
-og_image: "target-hotwire-native.png"
+og_image: "load-more-with-pagy-and-turbo.png"
 ---
 
 I have been working on my app [Friends Weekly](https://friendsweekly.com) for a while now. It uses at the latest a greatest tech: Rails 8.1, Turbo, Stimulus, and Hotwire Native. So it only makes sense that when I wanted to support a "Load More" button to load more posts in a list, that I would expect to be able to do it without writing a lick of JS. Here is the functionality I wanted to build:
 
-(GIF of load more working in friends weekly)
+<video class="max-w-100 mx-auto" src="/assets/blogs/videos/load-more-friends-weekly.mp4?v2" loop autoplay playsinline></video>
 
 I think it works great, very simple, and only use the [Pagy Gem](https://github.com/ddnexus/pagy) and [Turbo Rails](https://github.com/hotwired/turbo-rails). Pagy has been my go to favorite pagination gem in the past few years. Not only does it boast being very fast, but it is just dead simple to use and takes away the need to maintain my own pagination logic.
 
