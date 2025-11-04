@@ -19,16 +19,14 @@
         {{ page.title }}
       </h1>
 
-      <div class="text-gray-400 text-lg mb-2">
+      <div class="text-gray-400 text-lg mb-2 flex flex-wrap items-center gap-x-2">
         <time datetime="{{ page.date | date_to_xmlschema }}">
           {{ page.date | date: "%B %d, %Y" }}
         </time>
         {% if page.categories.size > 0 %}
-          <span class="ml-4 flex flex-wrap gap-2">
-            {% for category in page.categories %}
-              {% include category_tag.html category=category %}
-            {% endfor %}
-          </span>
+          {% for category in page.categories %}
+            {% include category_tag.html category=category %}
+          {% endfor %}
         {% endif %}
       </div>
       <div class="text-gray-400 text-base mb-6">

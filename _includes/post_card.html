@@ -4,16 +4,14 @@
       {{ include.post.title }}
     </a>
   </h2>
-  <div class="text-gray-400 mb-3">
+  <div class="text-gray-400 mb-3 flex flex-wrap items-center gap-x-2">
     <time datetime="{{ include.post.date | date_to_xmlschema }}">
       {{ include.post.date | date: "%B %d, %Y" }}
     </time>
     {% if include.post.categories.size > 0 %}
-      <span class="ml-4 flex flex-wrap gap-2">
-        {% for category in include.post.categories %}
-          {% include category_tag.html category=category %}
-        {% endfor %}
-      </span>
+      {% for category in include.post.categories %}
+        {% include category_tag.html category=category %}
+      {% endfor %}
     {% endif %}
   </div>
   {% if include.post.excerpt %}
