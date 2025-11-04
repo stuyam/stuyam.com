@@ -10,48 +10,50 @@
       <div class="absolute z-30 w-full h-12 rounded-3xl bg-gradient-to-b from-blue-300 to-blue-700 float-animation-3"></div>
       <div class="absolute z-20 right-0 top-0 w-full h-20 rounded-3xl bg-gradient-to-b from-emerald-300 to-emerald-700 float-animation-4 hidden md:block"></div>
     </div>
-    <div class="relative z-20 max-w-4xl mx-auto mt-20 md:px-12 px-6 flex flex-col mb-24">
-      <div class="mb-8">
-        <a class="btn" href="/blog.html">← Blog</a>
-      </div>
+    <div class="relative z-20 max-w-5xl mx-auto mt-5 lg:mt-20 px-2 lg:px-12 mb-24">
+      <div class="p-3 lg:p-8 md:p-10 rounded-xl bg-slate-900/20 border border-slate-800/50 backdrop-blur-sm flex flex-col">
+        <div>
+          <a class="btn" href="/blog.html">← Blog</a>
+        </div>
 
-      <h1 class="text-3xl md:text-5xl font-medium !leading-normal">
-        {{ page.title }}
-      </h1>
+        <h1 class="text-2xl md:text-5xl font-medium !leading-normal mt-4">
+          {{ page.title }}
+        </h1>
 
-      <div class="text-gray-400 text-lg mb-2 flex flex-wrap items-center gap-x-2">
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%B %d, %Y" }}
-        </time>
-        {% if page.categories.size > 0 %}
-          {% for category in page.categories %}
-            {% include category_tag.html category=category %}
-          {% endfor %}
-        {% endif %}
-      </div>
-      <div class="text-gray-400 text-base mb-6">
-        by <a href="/" class="text-sky-500 hover:text-sky-400 transition-colors">Stuart Yamartino</a>
-      </div>
+        <div class="text-gray-400 text-lg flex flex-wrap items-center gap-x-2 gap-y-2 mt-4">
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          {% if page.categories.size > 0 %}
+            {% for category in page.categories %}
+              {% include category_tag.html category=category %}
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="text-gray-400 text-base mb-4 lg:mb-8 mt-2">
+          by <a href="/" class="text-sky-500 hover:text-sky-400 transition-colors">Stuart Yamartino</a>
+        </div>
 
-      <div class="prose prose-invert prose-lg max-w-none text-gray-100 mb-4 prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
-        {{ content }}
-      </div>
-      <div class="mb-10">
-        <script src="https://giscus.app/client.js"
-          data-repo="stuyam/stuyam.com"
-          data-repo-id="MDEwOlJlcG9zaXRvcnk1NjM5MTgxNA=="
-          data-category="Announcements"
-          data-category-id="DIC_kwDOA1x4hs4CxJZz"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="transparent_dark"
-          data-lang="en"
-          crossorigin="anonymous"
-          async>
-        </script>
+        <div class="prose prose-invert prose-md md:prose-lg max-w-none text-gray-100 mb-4 prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:text-sm md:prose-pre:text-base">
+          {{ content }}
+        </div>
+        <div class="mb-10">
+          <script src="https://giscus.app/client.js"
+            data-repo="stuyam/stuyam.com"
+            data-repo-id="MDEwOlJlcG9zaXRvcnk1NjM5MTgxNA=="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOA1x4hs4CxJZz"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="transparent_dark"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </div>
       </div>
     </div>
   </body>

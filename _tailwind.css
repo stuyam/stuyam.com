@@ -135,5 +135,5 @@ a:not(.btn):hover::after {
 }
 
 code[class*=language-], pre[class*=language-] {
-  font-size: 1rem;
+  @apply text-sm md:text-base;
 }
