@@ -13,8 +13,8 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   # Tailwind Ruby Gem [https://github.com/vormwald/jekyll-tailwindcss]
   gem "jekyll-tailwindcss"
-  # Bust asset caches [https://github.com/george-gca/jekyll-cache-bust]
-  gem "jekyll-cache-bust"
+  # Sitemap [https://github.com/jekyll/jekyll-sitemap]
+  gem "jekyll-sitemap"
 end
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
