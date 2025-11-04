@@ -1,0 +1,18 @@
+{% assign all_categories = "" | split: "" %}
+{% for post in site.posts %}
+  {% for category in post.categories %}
+    {% unless all_categories contains category %}
+      {% assign all_categories = all_categories | push: category %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign sorted_categories = all_categories | sort %}
+
+{% if sorted_categories.size > 0 %}
+  <div class="flex flex-wrap gap-2">
+    {% for category in sorted_categories %}
+      {% include category_tag.html category=category %}
+    {% endfor %}
+  </div>
+{% endif %}
+
