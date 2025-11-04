@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Targeting Hotwire Native with Tailwind"
-categories: ruby-on-rails hotwire-native tailwindcss
+categories: ruby-on-rails hotwire-native hotwire tailwindcss
 og_image: "target-hotwire-native.png"
 ---
 

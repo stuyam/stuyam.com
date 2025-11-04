@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  '"Load More" with Pagy and Turbo'
-categories: ruby-on-rails turbo pagy
+categories: ruby-on-rails turbo hotwire pagy
 og_image: "load-more-with-pagy-and-turbo.png"
 ---
 
