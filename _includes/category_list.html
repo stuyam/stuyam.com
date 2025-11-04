@@ -9,10 +9,12 @@
 {% assign sorted_categories = all_categories | sort %}
 
 {% if sorted_categories.size > 0 %}
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-3">
     {% for category in sorted_categories %}
       {% include category_tag.html category=category %}
     {% endfor %}
   </div>
+{% else %}
+  <p class="text-gray-500 text-sm">No categories available yet.</p>
 {% endif %}
 

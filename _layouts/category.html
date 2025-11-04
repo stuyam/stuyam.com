@@ -10,11 +10,11 @@ layout: default
 </div>
 <div class="relative z-20 max-w-4xl mx-auto mt-20 md:px-12 px-6 flex flex-col gap-8 mb-24">
   <div>
-    <a class="btn" href="/blog.html">← Blog</a>
+    <a class="btn" href="/blog">← Blog</a>
   </div>
   <h1 class="text-3xl md:text-4xl font-medium !leading-normal">
-    <span class="mr-4">🏷️</span>
-    Category: <span class="text-cyan-500">#{{ page.category-name }}</span>
+    <span class="mr-2">🏷️</span>
+    <span class="font-semibold">Category <span class="text-cyan-500">#{{ page.category-name }}</span></span>
   </h1>
 
   {% assign category_posts = "" | split: "" %}

@@ -13,10 +13,16 @@ title: Blog - Stu Yam
   <div>
     <a class="btn" href="/">← Home</a>
   </div>
-  <h1 class="text-3xl md:text-4xl font-medium !leading-normal"><span class="mr-4">📝</span> Blog Posts</h1>
+  <h1 class="text-3xl md:text-4xl font-medium !leading-normal">
+    <span class="mr-2">📚</span>
+    <span class="font-semibold">Blog Posts</span>
+  </h1>
 
-  <div class="mb-4">
-    <h2 class="text-xl font-medium mb-3 text-gray-300">Categories:</h2>
+  <div class="p-3 lg:p-5 rounded-xl bg-slate-900/20 border border-slate-800/50 backdrop-blur-sm">
+    <h2 class="text-xl md:text-2xl font-medium mb-4 text-gray-300 flex items-center gap-2">
+      <span>🏷️</span>
+      <span>Categories</span>
+    </h2>
     {% include category_list.html %}
   </div>
 
