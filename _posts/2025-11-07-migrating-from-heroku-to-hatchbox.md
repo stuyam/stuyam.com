@@ -7,13 +7,13 @@ og_image: "migrating-from-heroku-to-hatchbox.png"
 
 I have been using Heroku for the last decade and it has served me well. However, Salesforce bought Heroku back in January 2011 (almost 15 years ago) and the platform has hardly evolved since. It feels like it has been in maintenance mode for years. That stagnation shows up in the pricing, too; what felt right for 2011 no longer makes sense in 2025.
 
-Pricing aside, Heroku is strict about it's dynos and you don't get _full server access_ which makes it hard matching versions of Ruby or Node with the buildpack configuration and can turn into a puzzle.
+Pricing aside, Heroku is strict about its dynos and you don't get _full server access_ which makes it hard matching versions of Ruby or Node with the buildpack configuration and can turn into a puzzle.
 
 Meanwhile, tools like Kamal have matured and providers like Hetzner make cheap, powerful servers easy to access. I have been weighing alternatives to Heroku for a few years. Kamal is appealing, but I still like having a slick Heroku-style UI for configuring my apps.
 
 With all that in mind, I decided to try [Hatchbox](https://hatchbox.io). I kept seeing people rave about it, and knowing that [Chris Oliver](https://x.com/excid3) from GoRails built it gave me confidence it was worth testing. I used [Laravel Forge](https://forge.laravel.com) back when I shipped Laravel apps a decade ago, and Hatchbox immediately felt familiar in the best ways.
 
-Long story short: I switched all of my apps from Heroku to Hatchbox in a single day and came away impressed. I deployed a very modern app—[Friends Weekly](https://friendsweekly.com)—running Rails 8.1 and Ruby 3.4, and it worked without a hitch. I also deployed a slightly older app—[Bootstrap Email](https://app.bootstrapemail.com)—running Rails 6 and Ruby 2.7, and it worked on the first try. I honestly couldn't believe it _just worked_. I struggling to even get the app running on my laptop or on a newer Heroku stack, yet Hatchbox handled it flawlessly. I was extremely impressed and wanted to share the migration process in case it helps others do the same.
+Long story short: I switched all of my apps from Heroku to Hatchbox in a single day and came away impressed. I deployed a very modern app—[Friends Weekly](https://friendsweekly.com)—running Rails 8.1 and Ruby 3.4, and it worked without a hitch. I also deployed a slightly older app—[Bootstrap Email](https://app.bootstrapemail.com)—running Rails 6 and Ruby 2.7, and it worked on the first try. I honestly couldn't believe it _just worked_. I was struggling to even get the app running on my laptop or on a newer Heroku stack, yet Hatchbox handled it flawlessly. I was extremely impressed and wanted to share the migration process in case it helps others do the same.
 
 <img class="w-full" src="/assets/blogs/opengraph/migrating-from-heroku-to-hatchbox.png">
 
@@ -48,7 +48,7 @@ Here are the steps we will go through to set up and migrate from Heroku to Hatch
 
 ### Starting to Migrate
 - Your app now exists in Hatchbox, so it is time to move things over from Heroku. We will start by moving the app over but leaving the database on Heroku for now.
-1. Move every environment variable from Heroku into Hatchbox. Find them in the Heroku settings and copy them into the app `Environment` settings in Hatchbox. Whether you use `.env` style variables or Rails credentials, it all works the same. When using credentials, the `RAILS_MASTER_KEY` variable decrypts the production credentials file. Make sure you copy over the `SECRET_KEY` from Heroku or delete the `SECRET_KEY` if it's in credentials to ensure your things like sessions and users stay logged in through the migration.
+1. Move every environment variable from Heroku into Hatchbox. Find them in the Heroku settings and copy them into the app `Environment` settings in Hatchbox. Whether you use `.env` style variables or Rails credentials, it all works the same. When using credentials, the `RAILS_MASTER_KEY` variable decrypts the production credentials file. Make sure you copy over the `SECRET_KEY` from Heroku, or delete the `SECRET_KEY` if it's in credentials, so sessions and users stay logged in through the migration.
 2. This process assumes your Rails app uses a `DATABASE_URL` on Heroku. Copy that variable as well; we will deploy to Hatchbox while still pointing at the Heroku database for now.
 3. Hit `Deploy` in Hatchbox to deploy your new app. Check the recent logs to confirm it deployed successfully. Click the `View App` button in Hatchbox to ensure the app is running properly in the browser 🎉
 
@@ -60,10 +60,10 @@ Here are the steps we will go through to set up and migrate from Heroku to Hatch
 ### Set up SSH
 - Hatchbox has a firewall setup so that the databases can only be used on your Hatchbox server for security reasons. So we first need to set up SSH so we connect to the Hatchbox server from our computer.
 1. Run `ssh-keygen -t ed25519` in your terminal.
-2. Hit enter to accept default file name.
+2. Hit Enter to accept the default file name.
 3. Create a password, I saved mine in 1password. If you use 1password you can also save SSH keys.
 4. Run `cat ~/.ssh/id_ed25519.pub` to print the public key and copy it.
-5. Go to `SSH Keys` in Hatchox and click `New SSH Key` and paste the newly generate public key into Hatchbox and save it.
+5. Go to `SSH Keys` in Hatchbox and click `New SSH Key` and paste the newly generated public key into Hatchbox and save it.
 6. To test the connection, go into your server on Hatchbox, click `SSH` from the left tab. You will see a line that looks something like this `ssh deploy@10.20.30.40.50`, paste it into your terminal and you should be able to connect to the server following the steps.
 
 ### Connect to Old and New DB with TablePlus
@@ -71,10 +71,10 @@ Here are the steps we will go through to set up and migrate from Heroku to Hatch
 1. Download [TablePlus](https://tableplus.com/download/).
 2. Once installed, add a connection and choose `Import from URL`.
 3. Paste in the Heroku database URL from the env and connect.
-4. Back in Hatchbox, in your app's left nav in Hatchbox, click `Databases` and create a new unmanaged database for your app. Click `View` in the database your just created and copy the database url.
-5. In TablePlus, create a new connection for the Hatchbox database. Click `Import from URL` to setup. It will fill out the connection form but you need to click the `Over SSH` button to tunnel through your ssh connection.
+4. Back in Hatchbox, in your app's left nav in Hatchbox, click `Databases` and create a new unmanaged database for your app. Click `View` in the database you just created and copy the database url.
+5. In TablePlus, create a new connection for the Hatchbox database. Click `Import from URL` to set it up. It will fill out the connection form but you need to click the `Over SSH` button to tunnel through your ssh connection.
 6. The username and server IP need to be added to the ssh part of form, those values are the same as the ssh values you used to connect from your terminal above, something like `ssh deploy@10.20.30.40.50` so the username is `deploy` and the ip is `10.20.30.40.50`.
-7. Check the `Use SSH Key` box and select the private key your generate on you computer at `~/.ssh/id_ed25519.pub`.
+7. Check the `Use SSH Key` box and select the private key you generated on your computer at `~/.ssh/id_ed25519.pub`.
 8. Test the connection and connect to the database.
 You should now have your Heroku and your Hatchbox databases connected to TablePlus.
 <img class="w-full" src="/assets/blogs/images/migrating-from-heroku-to-hatchbox/postgres-ssh-connection.png">
