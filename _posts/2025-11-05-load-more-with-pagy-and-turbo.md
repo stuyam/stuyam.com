@@ -7,7 +7,7 @@ og_image: "load-more-with-pagy-and-turbo.png"
 
 I have been working on my app [Friends Weekly](https://friendsweekly.com) for a while now. It's a new form of "Small Room" social media to stay in touch with the people you care about. It works by aggregating all posts from friends over the past week into a single newsletter that you get once a week. I needed a way to paginate the newsletter list so users could "Load More" older results if they want to go further back in time. It uses the latest and greatest tech: Rails 8.1, Turbo, Stimulus, and Hotwire Native, so naturally I wanted to do this without writing a lick of JS. Here is the functionality I ended up building:
 
-<video class="max-w-100 mx-auto" src="/assets/blogs/videos/load-more-friends-weekly.mp4?v2" loop autoplay playsinline></video>
+<video class="max-w-100 w-full mx-auto" src="/assets/blogs/videos/load-more-friends-weekly.mp4?v2" loop autoplay playsinline></video>
 
 I think it works great and is very simple, using only the [Pagy Gem](https://github.com/ddnexus/pagy) and [Turbo Rails](https://github.com/hotwired/turbo-rails). Pagy has been my go-to favorite pagination gem in the past few years. Not only does it boast being very fast, but it is just dead simple to use and takes away the need to maintain my own pagination logic.
 
