@@ -5,7 +5,7 @@ categories: ruby-on-rails heroku hatchbox
 og_image: "migrating-from-heroku-to-hatchbox.png"
 ---
 
-I have been using Heroku for the last decade and it has served me well. However, Salesforce bought Heroku back in January 2011 (almost 15 years ago) and the platform has hardly evolved since. It feels like it has been in maintenance mode for years. That stagnation shows up in the pricing, too; what felt right for 2011 no longer makes sense in 2025.
+I have been using Heroku for the last decade and it has served me well. At the time it was released it was pretty revolutionary and [The Twelve-Factor App](https://12factor.net) principals were ahead of it's time. However, Salesforce bought Heroku back in January 2011 (almost 15 years ago) and the platform has hardly evolved since. It feels like it has been in maintenance mode for years. That stagnation shows up in the pricing, too; what felt right for 2011 no longer makes sense in 2025.
 
 Pricing aside, Heroku is strict about its dynos and you don't get _full server access_ which makes it hard matching versions of Ruby or Node with the buildpack configuration and can turn into a puzzle.
 
@@ -70,10 +70,10 @@ Here are the steps we will go through to set up and migrate from Heroku to Hatch
 - Now we will connect to the old Heroku and the new Hatchbox database.
 1. Download [TablePlus](https://tableplus.com/download/).
 2. Once installed, add a connection and choose `Import from URL`.
-3. Paste in the Heroku database URL from the env and connect.
-4. Back in Hatchbox, in your app's left nav in Hatchbox, click `Databases` and create a new unmanaged database for your app. Click `View` in the database you just created and copy the database url.
+3. Paste in the Heroku database URL from the env and connect and you should now be able to see your Heroku DB in TablePlus.
+4. Back in Hatchbox, in your app's left nav, click `Databases` and create a new unmanaged database for your app. Click `View` in the database you just created and copy the database url.
 5. In TablePlus, create a new connection for the Hatchbox database. Click `Import from URL` to set it up. It will fill out the connection form but you need to click the `Over SSH` button to tunnel through your ssh connection.
-6. The username and server IP need to be added to the ssh part of form, those values are the same as the ssh values you used to connect from your terminal above, something like `ssh deploy@10.20.30.40.50` so the username is `deploy` and the ip is `10.20.30.40.50`.
+6. The username and server IP need to be added to the ssh part of form, those values are the same as the ssh values you used to connect from your terminal above, something like `ssh deploy@10.20.30.40.50`. So for example the username would be `deploy` and the ip `10.20.30.40.50`.
 7. Check the `Use SSH Key` box and select the private key you generated on your computer at `~/.ssh/id_ed25519.pub`.
 8. Test the connection and connect to the database.
 You should now have your Heroku and your Hatchbox databases connected to TablePlus.
@@ -97,7 +97,7 @@ You should now have your Heroku and your Hatchbox databases connected to TablePl
 ### Bring Back the App
 - Everything is ready, so we just need to update the environment and bring the app back online.
 1. Back in the app `Environment` settings, rename `DATABASE_URL` to `HEROKU_DATABASE_URL` and save. You could delete it, but renaming keeps it handy in case you need to revert quickly.
-2. You should see another database URL, something like `RED_DATABASE_URL`, which points to the Hatchbox database. Rename that one to `DATABASE_URL` so Rails uses it as the primary database.
+2. You should see another database URL, something like `RED_DATABASE_URL`, which points to the Hatchbox database we created. Rename that one to `DATABASE_URL` so Rails uses it as the primary database.
 3. Return to app `Settings` and disable maintenance mode.
 4. You should now be able to load your app in the browser with everything running on Hatchbox 🎉
 
