@@ -107,3 +107,5 @@ One of the best things about Hatchbox is the flat fee per server. You get access
 One of my favorite features is continuous database backups to S3, R2, or any compatible storage service. Since the database is unmanaged, having an automated safety net matters. I set mine to back up the database daily to a Cloudflare R2 bucket that keeps 30 days of history and automatically prunes older backups so I am not paying for stale data. Each database gets its own subfolder, so I use one R2 bucket to backup all of my app databases in one place.
 
 Another feature I appreciate is `Cron Jobs`. I used to lean on the Heroku Scheduler add-on to run scripts cheaply, but it was pretty limited. Hatchbox gives you full cron support, so migrating any scheduled tasks from Heroku is easy and you get complete control over timing and frequency.
+
+**Thank you** to [Chris Oliver](https://x.com/excid3) for not only creating a great product, but also answer my questions on X and making me excited about my Rails servers again!
