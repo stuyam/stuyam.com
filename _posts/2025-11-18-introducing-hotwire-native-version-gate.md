@@ -5,11 +5,13 @@ categories: ruby-on-rails hotwire-native hotwire open-source
 og_image: "hotwire-native-version-gate.png"
 ---
 
+<a class="text-sky-500" href="https://github.com/stuyam/hotwire_native_version_gate" target="_blank">Go straight to gem &rarr;</a>
+
 Hotwire Native has made releasing iOS and Android apps so much easier than it used to be. Since it is web-based, it means you can deploy most changes from your backend without needing to release through the app stores. However, there are times when you need to release new versions of the apps. When you do, unlike Rails which is running a singular instance on a server, you will have multiple versions of the app running at the same time on users' devices. This introduces a problem where you might need to make different choices on the backend based on the version or platform of the app.
 
 My app [Friends Weekly](https://friendsweekly.com) is a Hotwire Native app. Originally it was built using an HTML tab bar for convenience. However, for many reasons it is now better and easier to implement a native tab bar. This introduces the issue where users running the old app versions need to display the HTML tab bar but I want to hide it on newer app versions since it will now have the native tabs. Not to mention the same goes for Android and the Android app is also a different version than the iOS app.
 
-Introducing [Hotwire Native Version Gate](https://github.com/stuyam/hotwire_native_version_gate), the Ruby gem that lets you define versioned features in your Rails app and lets you run checks on those features throughout your views and controllers.
+Introducing <a class="text-sky-500" href="https://github.com/stuyam/hotwire_native_version_gate">Hotwire Native Version Gate</a>, the Ruby gem that lets you define versioned features in your Rails app and lets you run checks on those features throughout your views and controllers.
 
 ## How It Works
 
