@@ -5,9 +5,9 @@ categories: ruby-on-rails hotwire-native hotwire open-source
 og_image: "hotwire-native-version-gate.png"
 ---
 
-Hotwire Native has made releasing iOS and Android apps so much easier than it used to be. Since it is web based, it means you can deploy most changes from your backend without needing to release through the app stores. However, there are times when you need to release new versions of the apps. When you do, unlike Rails which is running a singular instance on a server, you will have multiple versions of the app running at the same time on users devices. This introduces a problem where you might need to make different choices on the backend based on the version or platform of the app.
+Hotwire Native has made releasing iOS and Android apps so much easier than it used to be. Since it is web-based, it means you can deploy most changes from your backend without needing to release through the app stores. However, there are times when you need to release new versions of the apps. When you do, unlike Rails which is running a singular instance on a server, you will have multiple versions of the app running at the same time on users' devices. This introduces a problem where you might need to make different choices on the backend based on the version or platform of the app.
 
-My app [Friends Weekly](https://friendsweekly.com) is a Hotwire Native app. Originally it was built using an HTML tab bar for convenience. However, for many reason it is now better and easier to impliment a native tab bar. This introduces the issue where users running the old app versions need to display the HTML tab bar but I want to hide it on newer app versions since it will now have the native tabs. Not to mention the same goes for Android and the Android app is also a different version than the iOS app.
+My app [Friends Weekly](https://friendsweekly.com) is a Hotwire Native app. Originally it was built using an HTML tab bar for convenience. However, for many reasons it is now better and easier to implement a native tab bar. This introduces the issue where users running the old app versions need to display the HTML tab bar but I want to hide it on newer app versions since it will now have the native tabs. Not to mention the same goes for Android and the Android app is also a different version than the iOS app.
 
 Introducing [Hotwire Native Version Gate](https://github.com/stuyam/hotwire_native_version_gate), the Ruby gem that lets you define versioned features in your Rails app and lets you run checks on those features throughout your views and controllers.
 
@@ -44,7 +44,7 @@ The gem expects your mobile apps to append version information to their User Age
 - iOS: `Hotwire Native App iOS/1.2.0;`
 - Android: `Hotwire Native App Android/1.1.0;`
 
-The gem includes regex patterns to parse these User Agents and extract the platform and version. It also includes fallback patterns and lets you app fallback patterns for older apps that might use the default Hotwire Native User Agent without version numbers (like `Hotwire Native iOS;`) or any custom user agent setup.
+The gem includes regex patterns to parse these User Agents and extract the platform and version. It also includes fallback patterns and lets you add fallback patterns for older apps that might use the default Hotwire Native User Agent without version numbers (like `Hotwire Native iOS;`) or any custom user agent setup.
 
 ## Setup
 
@@ -134,9 +134,9 @@ end
 
 The gem also provides two handy helpers throughout your Rails app:
 - `native_ios?` — Returns `true` if the current request comes from a Hotwire Native iOS app
-  - Also support version strings for manual checking `native_ios?('1.2.3')`
+  - Also supports version strings for manual checking `native_ios?('1.2.3')`
 - `native_android?` — Returns `true` if the current request comes from a Hotwire Native Android app
-  - Also support version strings for manual checking `native_android?('1.2.3')`
+  - Also supports version strings for manual checking `native_android?('1.2.3')`
 
 These are useful if you need to change behavior based on platform, regardless of version. For example:
 
