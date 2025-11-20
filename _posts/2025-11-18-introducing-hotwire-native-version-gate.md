@@ -88,7 +88,7 @@ If you have many features, you might want to create a separate concern to avoid 
 # app/controllers/concerns/native_features.rb
 module NativeFeatures
   extend ActiveSupport::Concern
-  extend HotwireNativeVersionGate::Concern
+  include HotwireNativeVersionGate::Concern
 
   included do
     native_feature :html_tabs, ios: '1.2.0', android: '1.1.0'
