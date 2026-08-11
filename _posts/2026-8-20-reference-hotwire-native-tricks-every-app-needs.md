@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Reference: Hotwire Native Tricks Every App (Might) Need"
-categories: ruby-on-rails hotwire-native hotwire
-og_image: "target-hotwire-native.png"
+categories: ruby-on-rails hotwire-native hotwire turbo
+og_image: "hotwire-native-app-tricks.png"
 ---
 
 I have been writing Hotwire Native apps for almost 2 years now and have picked up many tricks along the way that end up making it into almost all the apps I build. I want to keep this straight and to the point as a reference for myself and others of tricks to come back to for common Hotwire Native <span class="text-red-500">problems</span> & <span class="text-green-500">solutions</span>.
