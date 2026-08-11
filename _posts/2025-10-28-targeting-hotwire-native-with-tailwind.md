@@ -16,8 +16,6 @@ Enter Tailwind Variants. Tailwind variants allow us to apply any Tailwind class 
 ```erb
 <!DOCTYPE html>
 <html <%= 'data-hotwire-native' if hotwire_native_app? %>>
-  <head>
-  ...
 ```
 
 Then in Tailwind, we create a set of variants like so:
@@ -77,8 +75,11 @@ Then you can add the new `native_ios?` and `native_android?` view helpers from t
 ```erb
 <!DOCTYPE html>
 <html <%= 'data-hotwire-native' if hotwire_native_app? %> <%= 'data-native-ios' if native_ios? %> <%= 'data-native-android' if native_android? %>>
-  <head>
-  ...
+```
+**Updated Note** 🎉  I just added a helper into Hotwire Native Version Gate to make the above much easier:
+```erb
+<!DOCTYPE html>
+<html <%= hotwire_native_html_attributes %>>
 ```
 
 Then in Tailwind, we create a set of variants like so:
