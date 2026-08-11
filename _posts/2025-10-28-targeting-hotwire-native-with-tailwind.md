@@ -13,7 +13,7 @@ This works well, but there is usually more to it than just showing or hiding a p
 
 Enter Tailwind Variants. Tailwind variants allow us to apply any Tailwind class to just native apps, giving us full control over the styling of our native apps. The first step is to set up our `application.html.erb` layout to include a `data-hotwire-native` property we can use for Tailwind variants.
 
-```markup
+```erb
 <!DOCTYPE html>
 <html <%= 'data-hotwire-native' if hotwire_native_app? %>>
   <head>
@@ -24,13 +24,9 @@ Then in Tailwind, we create a set of variants like so:
 ```css
 /* app/assets/tailwind/variants.css */
 /* Target browser only */
-@variant browser (@media (display-mode: browser) and html:not([data-hotwire-native]) &);
-/* Standalone mode for PWA */
-@variant pwa (@media (display-mode: standalone));
-/* Native mode for hotwire native */
-@variant native (html[data-hotwire-native] &);
-/* App Like mode for PWA or hotwire native */
-@variant applike (@media (display-mode: standalone), html[data-hotwire-native] &);
+@custom-variant browser (html:not([data-hotwire-native]) &);
+/* Target Hotwire Native apps */
+@custom-variant native (html[data-hotwire-native] &);
 ```
 
 Tip: I create a `variants.css` file that I put these in to keep it isolated. Example:
@@ -41,12 +37,8 @@ Tip: I create a `variants.css` file that I put these in to keep it isolated. Exa
 ```
 
 A quick overview of what each variant does:
-- `browser:` targets browsers that are neither Hotwire Native nor PWA apps.
-- `pwa:` targets Progressive Web Apps only.
+- `browser:` targets browsers that are NOT Hotwire Native.
 - `native:` targets hotwire native only.
-- `applike:` targets PWAs or Hotwire Native if you want them to function the same.
-
-Feel free to only include the variants you need in your app.
 
 Now comes the fun part where we can arbitrarily combine variants to customize our app. Here is an example where we customize the background color of a button on hover **only** on native:
 
@@ -73,5 +65,39 @@ Here are some examples of places I have used it.
     <div class="tabbar native:pb-[max(env(safe-area-inset-bottom),0.5rem)]">...</div>
     ```
 
-Note: I actually discovered this [post by Joe Masilotti](https://masilotti.com/hotwire-native/hide-content-tailwind-css/) _after_ I wrote this. We came up with a very similar approach. The only slight difference I chose was to put the `data-hotwire-native` property on the `<html>` element so you can add classes to the `<body>` and they will still work because they are still a child of `<html>`. As well as some other naming choices differences but all and all same idea. Of course, Joe is a great resource for all things Hotwire Native. Check out his work if you haven't already.
+### Update: Target iOS vs Android - 8/10/2026
+I have since released [Hotwire Native Version Gate](http://localhost:4000/blog/introducing-hotwire-native-version-gate) which has helpers that makes it really easy to also add variants based on iOS vs Android which can be really useful for certain edge cases for iOS and Android apps.
 
+You can easily [install Hotwire Native Version Gate](https://github.com/stuyam/hotwire_native_version_gate#setup) by adding the gem to your Gemfile:
+```ruby
+bundle add hotwire_native_version_gate
+```
+
+Then you can add the new `native_ios?` and `native_android?` view helpers from the gem to the `application.html.erb` file like we did above. Your `<html>` element should look like this:
+```erb
+<!DOCTYPE html>
+<html <%= 'data-hotwire-native' if hotwire_native_app? %> <%= 'data-native-ios' if native_ios? %> <%= 'data-native-android' if native_android? %>>
+  <head>
+  ...
+```
+
+Then in Tailwind, we create a set of variants like so:
+```css
+/* app/assets/tailwind/variants.css */
+/* Target browser only */
+@custom-variant browser (html:not([data-hotwire-native]) &);
+/* Target Hotwire Native apps */
+@custom-variant native (html[data-hotwire-native] &);
+/* Target ONLY Hotwire Native on iOS */
+@custom-variant ios (html[data-native-ios] &);
+/* Target ONLY Hotwire Native on Android */
+@custom-variant android (html[data-native-android] &);
+```
+
+Then in our HTML we can use them like this:
+```markup
+<button class="browser:hidden">Hidden in regular browsers</button>
+<button class="native:hidden">Hidden in Hotwire Native apps</button>
+<button class="ios:hidden">Hidden in iOS Hotwire Native apps</button>
+<button class="android:hidden">Hidden in Android Hotwire Native apps</button>
+```
