@@ -101,7 +101,7 @@
   animation: hue-rotate 1s linear infinite;
 }
 
-a:not(.btn) {
+a:not(.btn):not(.heading-anchor) {
   text-shadow: 1px 1px 0 #111827;
   text-decoration: underline !important;
   text-underline-offset: 0.3rem;
@@ -109,13 +109,13 @@ a:not(.btn) {
   position: relative;
 }
 
-a:not(.btn):hover {
+a:not(.btn):not(.heading-anchor):hover {
   transform: translateY(-2px);
   text-shadow: 2px 2px 0 #111827, 0 0 10px currentColor;
   filter: brightness(1.2);
 }
 
-a:not(.btn)::after {
+a:not(.btn):not(.heading-anchor)::after {
   content: '';
   position: absolute;
   width: 0;
@@ -126,8 +126,57 @@ a:not(.btn)::after {
   transition: width 0.2s ease;
 }
 
-a:not(.btn):hover::after {
+a:not(.btn):not(.heading-anchor):hover::after {
   width: 100%;
+}
+
+.prose :is(h2, h3, h4, h5, h6) {
+  scroll-margin-top: 1.5rem;
+}
+
+.heading-anchor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.4em;
+  color: #38bdf8;
+  text-decoration: none !important;
+  vertical-align: middle;
+  opacity: 0.45;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.heading-anchor svg {
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.heading-anchor-check {
+  display: none;
+}
+
+.heading-anchor.copied {
+  color: #34d399;
+  opacity: 1;
+}
+
+.heading-anchor.copied .heading-anchor-icon {
+  display: none;
+}
+
+.heading-anchor.copied .heading-anchor-check {
+  display: block;
+}
+
+@media (hover: hover) {
+  .heading-anchor {
+    opacity: 0;
+  }
+
+  .prose :is(h2, h3, h4, h5, h6):hover .heading-anchor,
+  .heading-anchor:focus-visible {
+    opacity: 1;
+  }
 }
 
 .btn {
