@@ -64,7 +64,7 @@ Here are some examples of places I have used it.
     ```
 
 ### Update: Target iOS vs Android - 8/10/2026
-I have since released [Hotwire Native Version Gate](http://localhost:4000/blog/introducing-hotwire-native-version-gate) which has helpers that makes it really easy to also add variants based on iOS vs Android which can be really useful for certain edge cases for iOS and Android apps.
+I have since released [Hotwire Native Version Gate](https://stuyam.com/blog/introducing-hotwire-native-version-gate) which has helpers that makes it really easy to also add variants based on iOS vs Android which can be really useful for certain edge cases for iOS and Android apps.
 
 You can easily [install Hotwire Native Version Gate](https://github.com/stuyam/hotwire_native_version_gate#setup) by adding the gem to your Gemfile:
 ```ruby
